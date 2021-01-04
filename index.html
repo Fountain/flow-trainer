@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1>Freestyle Trainer</h1>
+      <div class="progress-border">
+        <div id="current-rhyme-progress" class="progress-bar" style="width:0px"></div>
+      </div>
+    </header>
+    <div id="current-rhyme" class="word-box">
+      <span class="caption">current rhyme</span>
+      <div class="prompt" id="current-word">bright</div>
+    </div>
+    <div id="next-rhyme" class="word-box">
+      <span class="caption">next rhyme</span>
+      <div class="prompt" id="next-word">light</div>
+    </div>
+    <footer><audio id="audio-player" src="" controls>Your browser does not support audio. Not a lot we can do here.</audio>
+    </footer> 
+  </div>
+  <script>
+    const songs = [
+    {
+    "url": "songs/190_full_we-the-champs_0158_preview.mp3",
+    "sections": [
+      {
+        "title": "Intro",
+        "endTime": 10.5,
+        "totalSegments": 1,
+        "type": "intro",
+        "duration": 10.5
+      },
+      {
+        "title": "Section A",
+        "endTime": 21,
+        "totalSegments": 4,
+        "duration": 10.5
+      },
+      {
+        "title": "Section B",
+        "endTime": 41.5,
+        "totalSegments": 8,
+        "duration": 20.5
+      },
+      {
+        "title": "Section C",
+        "endTime": 62,
+        "totalSegments": 8,
+        "duration": 21
+      },
+      {
+        "title": "Section D",
+        "endTime": 72,
+        "totalSegments": 4,
+        "duration": 10.5
+      },
+      {
+        "title": "Section E",
+        "endTime": 92.5,
+        "totalSegments": 8,
+        "duration": 20.5
+      },
+      {
+        "title": "Section F",
+        "endTime": 113,
+        "totalSegments": 8,
+        "duration": 20.5
+      },
+      {
+        "title": "Section G",
+        "endTime": 133.5,
+        "totalSegments": 8,
+        "duration": 20.5
+      },
+      {
+        "title": "Section G",
+        "endTime": 154,
+        "totalSegments": 8,
+        "duration": 20.5
+      },
+      {
+        "title": "Outro",
+        "endTime": 159,
+        "totalSegments": 1,
+        "type": "outro",
+        "duration": 4
+      }
+    ],
+    "bpm": 90,
+    "lengthSeconds": 158,
+    "totalBars": 56,
+    "title": "Feeling Good"
+  }
+  ]</script>
+  <script src="rhymes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+const dictionary = [
+["the", "be", "he", "we", "she", "see", "me", "free", "three", "sea", "degree", "key", "tree", "agree", "tea", "guarantee", "fee", "knee", "decree", "debris", "disagree", "plea", "bee", "flee", "ski", "foresee", "dvd", "flea", "glee", "referee", "spree", "banshee"],
+["of", "above", "love", "thereof", "dove", "glove", "shove"],
+["to", "you", "who", "new", "into", "two", "through", "do", "too", "few", "view", "true", "knew", "due", "review", "blue", "grew", "drew", "threw", "crew", "pursue", "flew", "sue", "blew", "coup", "shoe", "clue", "glue", "bamboo", "renew", "hue", "zoo", "anew", "dew", "taboo", "undo", "debut", "chew", "stew", "untrue", "flu", "ado", "subdue", "slew", "woo", "brew", "pew", "tattoo", "boo", "kangaroo", "shampoo", "redo", "outgrew", "spew", "hullabaloo", "misconstrue", "kazoo", "unglue", "withdrew", "canoe", "review", "undue", "accrue"],
+["and", "land", "understand", "demand", "stand", "command", "band", "grand", "planned", "sand", "expand", "brand", "gland", "strand", "withstand", "banned", "scanned", "canned", "bland", "tanned", "spanned", "unplanned", "fanned", "misunderstand", "unmanned", "disband", "panned", "firsthand"]
+];
