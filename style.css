@@ -19,6 +19,18 @@ body {
 header {
   background-color: ghostwhite;
 }
+#byline {
+  color: #1664d6;
+  font-style: italic;
+  font-size: 11px;
+  text-align: right;
+  position: relative;
+  top: -20px;
+  left: -20px;
+}
+#byline a {
+  color: #1664d6;
+}
 h1 {
   width: 100%;
   text-align: center;
@@ -45,10 +57,20 @@ audio:focus {
 .progress-border {
   background-color: #ccc;
   width: 100%;
+  position: relative;
 }
 .progress-bar {
   background-color: dodgerblue;
   height: 24px;
+}
+#inner-progress-text {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
 }
 .prompt {
   text-align: center;
@@ -69,4 +91,21 @@ footer {
   width: 100%;
   background-color: rgb(240, 239, 239);
   text-align: center;
+}
+
+.pulsate {
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }

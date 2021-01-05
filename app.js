@@ -24,11 +24,34 @@ function generateWordPairs(dictionary, totalWords) {
     return paired;
   });
   // randomly sort all pairs and flatten into single list
-  // pull esired number of words
+  // pull desired number of words
   let results = shuffled.flat().sort(() => 0.5 - Math.random()).flat().slice(0, totalWords);
   // add an end message
   results.push(":)");
   return results;
+}
+
+function findSongSegment(song) {
+  return song.sections.find(segment => audioPlayer.currentTime < segment.endTime)
+}
+
+function calculateBarPercentage(segment) {
+  // calculate elapsed segment time
+  let elapsedSegmentTime = audioPlayer.currentTime - (segment.endTime - segment.duration) 
+  // calculate duration of individual bar
+  let barDuration = segment.duration / segment.totalSegments;
+  // current bar of segment
+  let currentBar = Math.floor(elapsedSegmentTime / barDuration);
+  if (currentBar !== state.currentBar && segment.type !== "outro") {
+    state.currentBar = currentBar;
+    state.wordIndex += 1;
+    updateWords();
+    // console.log("Bar " + (currentBar + 1));
+  }
+  // calculate remaining duration of current bar
+  let segmentRemainder = elapsedSegmentTime % barDuration;
+  // calculate percentage of elapsed time 
+  return segmentRemainder / barDuration;
 }
 
 //
@@ -81,34 +104,13 @@ function drawProgressBar(id, percent) {
   progressEl.style.width = progressInPixels + "px";
 }
 
-function findSongSegment(song) {
-  return song.sections.find(segment => audioPlayer.currentTime < segment.endTime)
-}
-
-function calculateBarPercentage(segment) {
-  // calculate elapsed segment time
-  let elapsedSegmentTime = audioPlayer.currentTime - (segment.endTime - segment.duration) 
-  // calculate duration of individual bar
-  let barDuration = segment.duration / segment.totalSegments;
-  // current bar of segment
-  let currentBar = Math.floor(elapsedSegmentTime / barDuration);
-  if (currentBar !== state.currentBar && segment.type !== "outro") {
-    state.currentBar = currentBar;
-    state.wordIndex += 1;
-    updateWords();
-    console.log("Bar " + (currentBar + 1));
-  }
-  // calculate remaining duration of current bar
-  let segmentRemainder = elapsedSegmentTime % barDuration;
-  // console.log(elapsedSegmentTime);
-  // calculate percentage of elapsed time 
-  return segmentRemainder / barDuration;
-}
-
 function update(song) {
   // find current song segment
   let segment = findSongSegment(song);
   if (segment !== state.currentSegment) {
+    if (segment.type === "intro") {
+      document.getElementById("inner-progress-text").innerHTML = "This is the intro... get ready."
+    }
     state.currentSegment = segment;
     console.log(segment.title)
   }
