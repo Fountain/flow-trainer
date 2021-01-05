@@ -110,6 +110,8 @@ function update(song) {
   if (segment !== state.currentSegment) {
     if (segment.type === "intro") {
       document.getElementById("inner-progress-text").innerHTML = "This is the intro... get ready."
+    } else {
+      document.getElementById("inner-progress-text").innerHTML = ""
     }
     state.currentSegment = segment;
     console.log(segment.title)
